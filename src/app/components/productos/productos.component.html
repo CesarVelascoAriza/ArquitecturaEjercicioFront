@@ -1,1 +1,29 @@
-<p>productos works!</p>
+<div class="card border-primary mb-3">
+    <div class="card-header">
+        {{titulo}}
+    </div>
+    <div class="card-body text-primary">
+        <button class="btn btn-secondary my-2" routerLink="/productos/form"> Crear Producto</button>
+    <table class="table table-hober table-striped">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Fecha Creado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto  of lista">
+          <th scope="row">{{producto.id}}</th>
+          <td>{{producto.nombre}}</td>
+          <td>{{producto.cantidad}}</td>
+          <td>{{producto.precio}}</td>
+          <td>{{producto.createAt | date: 'yyyy-MM-dd'}}</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
