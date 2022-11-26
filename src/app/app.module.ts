@@ -13,6 +13,8 @@ import { ProductoFormComponent } from './components/productos/producto-form.comp
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorModule} from '@angular/material/paginator'
+import { LoginComponent } from './components/usuarios/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import {MatPaginatorModule} from '@angular/material/paginator'
     UsuariosComponent,
     HomeComponent,
     ProductoFormComponent,
+    LoginComponent,
     
   ],
   imports: [
