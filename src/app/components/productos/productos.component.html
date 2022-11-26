@@ -1,9 +1,9 @@
 <div class="card border-primary mb-3">
-    <div class="card-header">
-        {{titulo}}
-    </div>
-    <div class="card-body text-primary">
-        <button class="btn btn-secondary my-2" routerLink="/productos/form"> Crear Producto</button>
+  <div class="card-header">
+    {{titulo}}
+  </div>
+  <div class="card-body text-primary">
+    <button class="btn btn-secondary my-2" routerLink="/productos/form"> Crear Producto</button>
     <table class="table table-hober table-striped">
       <thead>
         <tr>
@@ -12,6 +12,8 @@
           <th scope="col">Cantidad</th>
           <th scope="col">Precio</th>
           <th scope="col">Fecha Creado</th>
+          <th scope="col">Editar</th>
+          <th scope="col">Eliminar</th>
         </tr>
       </thead>
       <tbody>
@@ -21,9 +23,18 @@
           <td>{{producto.cantidad}}</td>
           <td>{{producto.precio}}</td>
           <td>{{producto.createAt | date: 'yyyy-MM-dd'}}</td>
+          <td>
+            <button class="btn btn-secondary btn-sm" [routerLink]="['/productos/form',producto.id]">Editar</button>
+          </td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="eliminar(producto)">Eliminar</button>
+          </td>
         </tr>
-        
+
       </tbody>
     </table>
+    <mat-paginator [length]="totalRegistros" [pageSize]="totalPorPagina" [pageSizeOptions]="pageSizeOptions" 
+      (page)="paginar($event)" showFirstLastButtons class="float-left mx-2" aria-label="Select page">
+    </mat-paginator>
   </div>
 </div>

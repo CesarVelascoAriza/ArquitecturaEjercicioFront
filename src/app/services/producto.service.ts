@@ -1,4 +1,4 @@
-import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { HttpClient,HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Producto } from '../models/producto';
@@ -23,6 +23,12 @@ export class ProductoService {
     return this.http.put<Producto>(`${this.urlEndPoint}/${producto.id}`,producto,{headers:this.httpHeaders});
   }
   eliminar(id:number):Observable<void>{
-    return this.http.get<void>(`${this.urlEndPoint}/${id}`,{headers:this.httpHeaders});
+    return this.http.delete<void>(`${this.urlEndPoint}/${id}`,{headers:this.httpHeaders});
+  }
+  listarPagina(page:string,size:string):Observable<any>{
+    const params= new HttpParams()
+    .set('page',page)
+    .set('size',size);
+    return this.http.get<any>(`${this.urlEndPoint}/pagina`,{params:params})
   }
 }

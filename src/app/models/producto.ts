@@ -1,4 +1,4 @@
-import { EspecificacioTecnica } from "./especificacio-tecnica";
+import { EspecificacionTecnica } from "./especificacio-tecnica";
 
 export class Producto {
     id:number=0;
@@ -6,6 +6,6 @@ export class Producto {
     cantidad:number=0;
     precio:number=0;
     createAt:string="";
-    especificacionTecnica:EspecificacioTecnica= new EspecificacioTecnica();
+    especificacion:EspecificacionTecnica= new EspecificacionTecnica();
 
 }
