@@ -10,6 +10,8 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { HomeComponent } from './components/home/home.component';
 import { LayoutModule } from './layout/layout.module';
 import { ProductoFormComponent } from './components/productos/producto-form.component';
+import { LoginComponent } from './components/usuarios/login.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,13 +22,15 @@ import { ProductoFormComponent } from './components/productos/producto-form.comp
     UsuariosComponent,
     HomeComponent,
     ProductoFormComponent,
+    LoginComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
