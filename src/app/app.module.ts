@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorModule} from '@angular/material/paginator'
 import { LoginComponent } from './components/usuarios/login.component';
-import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Producto } from 'src/app/models/producto';
+import { AuthService } from 'src/app/services/auth.service';
 import { ProductoService } from 'src/app/services/producto.service';
 import Swal from 'sweetalert2';
 @Component({
@@ -17,7 +18,8 @@ export class ProductoFormComponent implements OnInit {
   constructor(
     private servicio: ProductoService,
     private router: Router,
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    public authService:AuthService
   ) { }
 
   ngOnInit(): void {

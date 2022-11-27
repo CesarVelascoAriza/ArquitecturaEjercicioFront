@@ -12,8 +12,8 @@
           <th scope="col">Cantidad</th>
           <th scope="col">Precio</th>
           <th scope="col">Fecha Creado</th>
-          <th scope="col">Editar</th>
-          <th scope="col">Eliminar</th>
+          <th scope="col" *ngIf="authService.hasRoles('ROLE_ADMIN') || authService.hasRoles('ROLE_USER')">Editar</th>
+          <th scope="col" *ngIf="authService.hasRoles('ROLE_ADMIN')">Eliminar</th>
         </tr>
       </thead>
       <tbody>
@@ -24,10 +24,10 @@
           <td>{{producto.precio}}</td>
           <td>{{producto.createAt | date: 'yyyy-MM-dd'}}</td>
           <td>
-            <button class="btn btn-secondary btn-sm" [routerLink]="['/productos/form',producto.id]">Editar</button>
+            <button *ngIf="authService.hasRoles('ROLE_ADMIN') || authService.hasRoles('ROLE_USER')" class="btn btn-secondary btn-sm" [routerLink]="['/productos/form',producto.id]">Editar</button>
           </td>
           <td>
-            <button class="btn btn-danger btn-sm" (click)="eliminar(producto)">Eliminar</button>
+            <button *ngIf="authService.hasRoles('ROLE_ADMIN')" class="btn btn-danger btn-sm" (click)="eliminar(producto)">Eliminar</button>
           </td>
         </tr>
 
