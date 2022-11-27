@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
+import { AuthService } from 'src/app/services/auth.service';
 import { ProductoService } from 'src/app/services/producto.service';
 import Swal from 'sweetalert2';
 import {PageEvent} from '@angular/material/paginator';
@@ -17,7 +18,10 @@ export class ProductosComponent implements OnInit {
   paginaActual=0;
   pageSizeOptions:number[]=[5, 10,25,100]
 
-  constructor(private service:ProductoService) { }
+  constructor(
+    private service:ProductoService,
+    public authService:AuthService
+    ) { }
 
   ngOnInit(): void {
     this.calcularRangos();
