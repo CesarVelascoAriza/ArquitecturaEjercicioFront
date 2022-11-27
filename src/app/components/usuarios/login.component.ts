@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
 import { AuthService } from 'src/app/services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.authService.isAutenticated()){
-      //Swal.fire('login',`Hola ${this.authService.usuario.username}, ya esta auteticado !`,'info');
+      Swal.fire('login',`Hola ${this.authService.usuario.username}, ya esta auteticado !`,'info');
       this.router.navigate(['/home'])
     }
   }
@@ -31,7 +32,7 @@ export class LoginComponent implements OnInit {
 
     console.info(this.usuario)
     if (this.usuario.username == null || this.usuario.password == null) {
-      //Swal.fire('Error login','Username or password vacios','error');
+      Swal.fire('Error login','Username or password vacios','error');
       return;
     }
 
@@ -46,7 +47,7 @@ export class LoginComponent implements OnInit {
      error:(e)=>{
       this.err=e
         if(this.err.status == 400){
-          //Swal.fire('Error login','Username or password incorrectos!','error');
+          Swal.fire('Error login','Username or password incorrectos!','error');
         }
      }
     })

@@ -65,7 +65,7 @@ export class AuthService {
     return null
   }
   public login(usuario: Usuario): Observable<any> {
-    const urlEndPoit = 'localhost:8090/api/security/oauth/token';
+    const urlEndPoit = '/api/security/oauth/token';
 
     const credentials = btoa('AngularApp' + ':' + '1234567890');
     const httpHeaders = new HttpHeaders({

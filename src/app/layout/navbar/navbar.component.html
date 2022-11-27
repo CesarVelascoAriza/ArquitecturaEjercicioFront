@@ -21,8 +21,8 @@
           
         </ul>
         <ul class="navbar-nav navbar-right">
-          <li><a *ngIf="!autoService.isAutenticated()" routerLink="/login" class="btn btn-outline-primary" >Login</a></li>
-          <li *ngIf="autoService.isAutenticated()">
+          <li><a *ngIf="autoService.isAutenticated()" routerLink="/login" class="btn btn-outline-primary" >Login</a></li>
+          <li *ngIf="!autoService.isAutenticated()">
             <button (click)="logout()" type="button" class="btn btn-primary">Logout</button>
           </li>
         </ul>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-navbar',
@@ -20,7 +21,7 @@ export class NavbarComponent implements OnInit {
   logout(): void {
     let username = this.autoService.usuario.username;
     this.autoService.logout();
-    //Swal.fire('logout',`Hola ${username}, has cerrado la sesion con exito ! `,'success');
+    Swal.fire('logout',`Hola ${username}, has cerrado la sesion con exito ! `,'success');
     this.router.navigate(['/login'])
   }
 }
